@@ -135,7 +135,7 @@
 </div>
 
 			</div>
-			${product.shoesstock}
+			<a href="inputtop">top</a>
 
 	</div>
 </body>
