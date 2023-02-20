@@ -119,7 +119,7 @@
       <a class="texttype3">${product.shoesprice}円</a>
       <a class="texttype4"><c:out value="${product.shoesstock}"/>個</a>
      <a class="texttype2"> サイズ:${product.shoessize}</a><br>
-		<input type="number" name="kosuu" value="1"min="1" max="100">
+		<input type="number" name="kosuu" value="1"min="1" max="${product.shoesstock}">
 						<input type="submit" value="カートに入れる">
 
  </td>
@@ -135,6 +135,7 @@
 </div>
 
 			</div>
+			${product.shoesstock}
 
 	</div>
 </body>
