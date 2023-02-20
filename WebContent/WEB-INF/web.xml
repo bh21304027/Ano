@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Ano1</display-name>
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/top.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/welcome.jsp</welcome-file>
 	</welcome-file-list>
 
 
@@ -64,39 +64,39 @@
 
 	<error-page>
 	<error-code>404</error-code>
-	<location>/404.jsp</location>
+	<location>/WEB-INF/jsp/404.jsp</location>
 	</error-page>
 
 	<error-page>
 	<error-code>500</error-code>
-	<location>/500.jsp</location>
+	<location>/WEB-INF/jsp/500.jsp</location>
 	</error-page>
 
 
 
 	<error-page>
 	<exception-type>ClassNotFoundException</exception-type>
-	<location>/ClassNotFoundException.jsp</location>
+	<location>/WEB-INF/jsp/ClassNotFoundException.jsp</location>
 	</error-page>
 
 	<error-page>
 	<exception-type>SQLException</exception-type>
-	<location>/SQLExceptio.jsp</location>
+	<location>/WEB-INF/jsp/SQLExceptio.jsp</location>
 	</error-page>
 
 	<error-page>
 	<exception-type>Exception</exception-type>
-	<location>/Exception.jsp</location>
+	<location>/WEB-INF/jsp/Exception.jsp</location>
 	</error-page>
 
 	<error-page>
 	<exception-type>ServletException</exception-type>
-	<location>/ServletException.jsp</location>
+	<location>/WEB-INF/jsp/ServletException.jsp</location>
 	</error-page>
 
 	<error-page>
 	<exception-type>IOException</exception-type>
-	<location>/IOException.jsp</location>
+	<location>/WEB-INF/jsp/IOException.jsp</location>
 	</error-page>
 
 
