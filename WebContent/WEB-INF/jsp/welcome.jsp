@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;URL='http:inputtop'" />
+<meta http-equiv="refresh" content="0;URL='inputtop'" />
 </head>
 <body>
 
