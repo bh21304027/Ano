@@ -104,6 +104,8 @@
 
 
     <h1 class="log">ユーザー情報変更</h1>
+
+    <a>${message}</a><br>
     <form method="post" action="updateuser">
 			<input type="hidden" name="userid" value='${data.userid}'>
         <div class="textmel">ユーザー名<input type="text" name="username" placeholder='${data.username}' value='${data.username}'class="m-form-text"></div>
@@ -114,8 +116,7 @@
        	<div class="textgen"> 住所<input type="text" name="address" placeholder='${data.addressaddress}' value='${data.addressaddress}'class="m-form-text"></div>
        		<input type="hidden" name="state" value='${data.state}'>
 
-        <input class="button"　type="submit" value="変更">
+        <input class="button"type="submit" value="変更">
     </form>
-    <a>${message}</a><br>
 </body>
 </html>
