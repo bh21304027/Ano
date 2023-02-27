@@ -16,9 +16,10 @@ position: relative;
     top: 100px;
 }
 .log1{
-	       position: relative;
+	position: relative;
     bottom: 70px;
     left: 300px;
+    font-size: xx-large;
 }
 
 .atag{

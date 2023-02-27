@@ -26,3 +26,25 @@
 
 
   //マウスアウト時の処理を記述
+
+
+
+
+
+  // リアルタイムバリデーション
+$('#mail').on('change', function(){
+  this.reportValidity();
+});
+
+$('#pass').on('change', function(){
+  this.reportValidity();
+});
+
+$('#phone').on('change', function(){
+  this.reportValidity();
+});
+
+$('#post').on('change', function(){
+  this.reportValidity();
+});
+

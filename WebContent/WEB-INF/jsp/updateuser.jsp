@@ -67,7 +67,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>
@@ -104,6 +104,7 @@
 
 
     <h1 class="log">ユーザー情報変更</h1>
+    <a href="inputtop">top</a><br>
 
     <a>${message}</a><br>
     <form method="post" action="updateuser">
@@ -111,12 +112,13 @@
         <div class="textmel">ユーザー名<input type="text" name="username" placeholder='${data.username}' value='${data.username}'class="m-form-text"></div>
         <div class="textyou">誕生日<input type="date" name="userdob" placeholder='${data.userdob}' value='${data.userdob}'class="m-form-text"></div>
 			<input type="hidden" name="addressid" value='${data.addressid}'>
-        <div class="textpas"> 電話番号<input type="text" name="phonenumber" placeholder='${data.addressphonenumber}'  value='${data.addressphonenumber}'class="m-form-text"></div>
-        <div class="textbir"> 郵便番号<input type="text" name="postcode" placeholder='${data.addresspostcode}' value='${data.addresspostcode}'class="m-form-text"></div>
+        <div class="textpas"> 電話番号<input type="text" name="phonenumber" placeholder='${data.addressphonenumber}'  value='${data.addressphonenumber}'class="m-form-text" id="phone"title="携帯電話番号の形式ではないまたはハイフンが入っています" pattern=[0-9]{11}></div>
+        <div class="textbir"> 郵便番号<input type="text" name="postcode" placeholder='${data.addresspostcode}' value='${data.addresspostcode}'class="m-form-text" id="post" title="郵便番号の形式ではないまたはハイフンが入っています" pattern=[0-9]{7}></div>
        	<div class="textgen"> 住所<input type="text" name="address" placeholder='${data.addressaddress}' value='${data.addressaddress}'class="m-form-text"></div>
        		<input type="hidden" name="state" value='${data.state}'>
 
         <input class="button"type="submit" value="変更">
     </form>
+
 </body>
 </html>

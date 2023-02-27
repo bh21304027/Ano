@@ -285,5 +285,49 @@ public class MySQLUserDao implements UserDao{
 		return u;
 	}
 
+	@Override//済み
+	public boolean cheakUserId(UserBean user){
+		Connection cn = null;
+		PreparedStatement st = null;
+
+		boolean c = false;
+
+
+		try{
+		cn = ConnectionManager.getInstance("mysql").getConnection();
+		cn.setAutoCommit(false);
+
+
+		String sql = "SELECT user_id FROM user_table WHERE user_id=?";
+		PreparedStatement pst = cn.prepareStatement(sql);
+
+		pst.setString(1, user.getUserid());
+		ResultSet re = pst.executeQuery();
+		if(re.next() == false) {
+			c = true;
+		}
+		}catch(SQLException e){
+			e.printStackTrace();
+			ConnectionManager.getInstance("mysql").rollback();
+
+		}finally{
+			try{
+				if(st !=null){
+					st.close();
+				}
+			}catch(SQLException e2){
+				e2.printStackTrace();
+				throw new ResourceAccessException(e2.getMessage(),e2);
+			}finally{
+				if(cn !=null){
+						ConnectionManager.getInstance("mysql").closeConnection();
+						cn=null;
+						System.out.println("mysql close1");
+				}
+			}
+		}
+		return c;
+	}
+
 
 }

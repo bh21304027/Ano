@@ -54,7 +54,7 @@ public class UserLoginCommand extends AbstractCommand {
 		session.setAttribute("userid", user);
 		session.setAttribute("username", username);
 		if(user !=null) {
-			req.setAttribute("message", "ようこそAnodidas。");
+			session.setAttribute("message", "ようこそAnodidas。");
 		//session.setAttribute("productattribute", new HashMap<Object, Object>());
 		resc.setTarget("welcome");
 		}else {

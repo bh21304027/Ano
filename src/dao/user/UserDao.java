@@ -9,4 +9,5 @@ public interface UserDao{
 	public String[] getUser(String userid, String userpass);
 	public UserBean getUserInfo(String uid);
 	public void updateUserpass(UserBean u);
+	public boolean cheakUserId(UserBean user);
 }

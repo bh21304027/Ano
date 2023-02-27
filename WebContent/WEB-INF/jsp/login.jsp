@@ -65,7 +65,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>
@@ -112,7 +112,7 @@
 
         <a>${message}</a><br>
 
-<h1 class="log1">新規登録</h1>
+<a class="log1">新規登録</a>
 
         <div class="form-footer">
             <div class="button1"><a href="inputsignup"class="atag">アカウント作成</a></div>

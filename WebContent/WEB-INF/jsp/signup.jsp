@@ -66,7 +66,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>
@@ -103,9 +103,9 @@
     <h1 class="log">新規登録</h1>
     <a>${message}</a><br>
     <form method="post" action="adduser">
-    <div class="textmel">メールアドレス<input type="text" name="userid"placeholder="(ログイン時のユーザーIDになります)" class="m-form-text"></div>
+    <div class="textmel">メールアドレス<input type="text" name="userid"placeholder="(ログイン時のユーザーIDになります)" class="m-form-text"id="mail" title="メールアドレスの形式" pattern=^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$></div>
       <div class="textyou"> ユーザー名<input type="text" name="username" class="m-form-text"></div>
-      <div class="textpas">パスワード<input type="password" name="userpass" class="m-form-text"></div>
+      <div class="textpas">パスワード<input type="password" name="userpass" class="m-form-text" id="pass" title="4～8文字の半角数字でパスワードを入力してください" placeholder="4～8文字の半角数字でパスワードを入力してください" pattern=[0-9]{4,8}></div>
        <div class="textbir">誕生日<input type="date" name="userdob"placeholder="19940425" class="m-form-text"></div>
         <div class="textgen">性別<input type="radio" name="usergender" value="0">男<input type="radio" name="usergender" value="1">女</div>
         <input class="button"type="submit" value="登録">

@@ -65,7 +65,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>

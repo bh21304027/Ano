@@ -17,6 +17,7 @@ public class AddUserCommand extends AbstractCommand {
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqc = getRequestContext();
+		HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
 
 		String[] useridｓ = reqc.getParameter("userid");
 		String[] usernames = reqc.getParameter("username");
@@ -28,6 +29,9 @@ public class AddUserCommand extends AbstractCommand {
 		if(reqc.getParameter("userid") !=null & reqc.getParameter("username") !=null &
 		   reqc.getParameter("userpass") !=null & reqc.getParameter("usergender") !=null &
 		   reqc.getParameter("userdob") !=null ) {
+
+
+
 
 
 
@@ -55,6 +59,14 @@ public class AddUserCommand extends AbstractCommand {
 				AbstractDaoFactory factory = AbstractDaoFactory.getFactory("mysql");
 				UserDao userdao = factory.getUserDao();
 
+				if (userdao.cheakUserId(u) == false) {
+					String message = "ユーザーIDは既に使われています<br>新しいユーザーIDを入力してください";
+					req.setAttribute("message", message);
+					resc.setTarget("signup");
+					return resc;
+				}
+
+
 
 				userdao.addUser(u);
 
@@ -68,12 +80,12 @@ public class AddUserCommand extends AbstractCommand {
 				//session.setAttribute("userid", userid);
 
 
-			HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
+			req = (HttpServletRequest) reqc.getRequest();
 			req.setAttribute("message", "登録完了[ログインしてください]");
 			resc.setTarget("login");
 			return resc;
 		}else {
-			HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
+			req = (HttpServletRequest) reqc.getRequest();
 			req.setAttribute("message", "入力に不足があります。");
 			resc.setTarget("signup");
 			return resc;

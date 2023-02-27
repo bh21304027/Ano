@@ -64,7 +64,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>
@@ -96,19 +96,24 @@
   </header>
  </div>
 <main>
+
 <div class="flex">
 		<div class = "products">
         <div class="product">
 <h2>注文確認</h2>
 
 
+
 <div class="orderinfo" style="height: 170px;padding-bottom: 120px;">
 	<h2>注文者情報</h2>
 
-	<div class="textname">名前：<input type="text" name="a" class="m-form-text"  value="${data.UserBean.username}"></div>
-	<div class="textphon">電話番号：<input type="text" name="a" class="m-form-text"  value="${data.AddressBean.addressphonenumber}"></div>
-	<div class="textadd">郵便番号：<input type="text" name="a" class="m-form-text" value="${data.AddressBean.addresspostcode}"></div>
-	<div class="textzyu">住所：<input type="text" name="a" class="m-form-text"  value="${data.AddressBean.addressaddress}"></div>
+
+	<form action="inputorder" method="post">
+	<a>${message}</a><br>
+	<div class="textname">名前：<input type="text" name="name" class="m-form-text"  value="${data.UserBean.username}"></div>
+	<div class="textphon">電話番号：<input type="text" name="phone" class="m-form-text"  value="${data.AddressBean.addressphonenumber}"id="phone"title="携帯電話番号の形式ではないまたはハイフンが入っています" pattern=[0-9]{11}></div>
+	<div class="textadd">郵便番号：<input type="text" name="code" class="m-form-text" value="${data.AddressBean.addresspostcode}"id="post"title="郵便番号の形式ではないまたはハイフンが入っています" pattern=[0-9]{7}></div>
+	<div class="textzyu">住所：<input type="text" name="address" class="m-form-text"  value="${data.AddressBean.addressaddress}"></div>
 
 </div>
 
@@ -122,7 +127,7 @@
 </div>
 <div class="ordergoods">
 		<h3>注文商品</h3>
- <main>
+
 
 
 <c:forEach var="showgoods" items="${data.list2}">
@@ -157,7 +162,10 @@
 	<c:out  value="${showgoods.cartsBean.shoespicturepath}"/>-->
 
 	<div class="pay" style="height: 200px;padding-bottom: 20px;"><div class="paypay">
-            <a href="inputorder" class="button" >注文を確定する</a>
+            <!-- <a href="inputorder" class="button" >注文を確定する</a>-->
+            <input class="button"  type="submit" value="注文を確定する">
+			</form>
+
         </div>
         <c:out value="${product.productCount}"/><br>
         <div class="flex1">
@@ -169,6 +177,7 @@
 
     </div>
 </div>
+
 </main>
 </body>
 </html>

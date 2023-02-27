@@ -3,9 +3,12 @@ package command.user;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import bean.ShoesBean;
 import command.AbstractCommand;
-//import context.RequestContext;
+import context.RequestContext;
 import context.ResponseContext;
 import dao.connectionmanager.ConnectionManager;
 import dao.factory.AbstractDaoFactory;
@@ -15,7 +18,9 @@ public class InputTopCommand extends AbstractCommand{
 
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
-		//RequestContext reqc = getRequestContext();
+		RequestContext reqc = getRequestContext();
+		HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
+		HttpSession session = req.getSession();
 		ArrayList<ShoesBean> list= new ArrayList<>();
 
 		ConnectionManager.getInstance("mysql").beginTransaction();
@@ -41,6 +46,10 @@ public class InputTopCommand extends AbstractCommand{
 		ConnectionManager.getInstance("mysql").closeConnection();
 
 		resc.setResult(list);
+
+		req.setAttribute("message", session.getAttribute("message"));
+		session.removeAttribute("message");
+		System.out.print("message:"+session.getAttribute("message"));
 
 
 		resc.setTarget("top");

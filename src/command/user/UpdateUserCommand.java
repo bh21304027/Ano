@@ -1,6 +1,7 @@
 package command.user;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import bean.AddressBean;
 import bean.UserBean;
@@ -16,6 +17,8 @@ public class UpdateUserCommand extends AbstractCommand {
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext reqc = getRequestContext();
+		HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
+		HttpSession session = req.getSession();
 
 		UserBean u = new UserBean();
 
@@ -39,7 +42,7 @@ public class UpdateUserCommand extends AbstractCommand {
 			{
 
 
-			HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
+			req = (HttpServletRequest) reqc.getRequest();
 			req.setAttribute("message", "入力に不足があります。");
 			resc.setTargetcommand("inputupdateuser");
 			return resc;
@@ -63,8 +66,8 @@ public class UpdateUserCommand extends AbstractCommand {
 		//ConnectionManager.getInstance("mysql").commit();
 
 		//ConnectionManager.getInstance("mysql").closeConnection();
-		HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
-		req.setAttribute("message", "ユーザー更新完了");
+		req = (HttpServletRequest) reqc.getRequest();
+		session.setAttribute("message", "ユーザー更新完了");
 		resc.setTarget("welcome");
 		return resc;
 

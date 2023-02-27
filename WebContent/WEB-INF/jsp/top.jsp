@@ -67,7 +67,7 @@
                     <div class="setright">
                     <li>
                     <div class="searchbox">
-                      <form id="form4" action="自分のサイトURL" method="get">
+                      <form id="form4" action="#" method="get">
                           <input id="sbox4"  id="s" name="s" type="text" placeholder="フリーワードを入力" />
                           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button></form></div>
                       </li>
@@ -147,7 +147,13 @@
 			<a href="showproductdetails?shoesid=${shoes.shoesid}">
 
 					<img src="<%=request.getContextPath() %>/image/${shoes.shoespicture}" width="210" height="180" alt="img"/><br>
-						カテゴリ：${shoes.categoryid}<br>
+						カテゴリ：
+<c:choose>
+<c:when test="${shoes.categoryid==1}">スニーカー</c:when>
+<c:when test="${shoes.categoryid==2}">サンダル</c:when>
+<c:when test="${shoes.categoryid==3}">サッカースパイク</c:when>
+</c:choose>
+						<br>
 						<h3 class="ttl">商品名：${shoes.shoesname}</h3>
 						<p>価格：${shoes.shoesprice}</p></a>
 						</div></li>

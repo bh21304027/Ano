@@ -109,6 +109,8 @@ h3{
     color: #FFF;
     transition: 0.3s ease-in-out;
     font-weight: 500;
+    border-width: 0;
+    border-style: none;
 }
 .button:after {
   content: "";
@@ -190,6 +192,21 @@ h3{
 .log{
 	position:relative;
 	    left: 400px;
+}
+
+
+
+
+
+
+
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
 }
 
 

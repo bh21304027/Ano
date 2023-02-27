@@ -89,7 +89,7 @@ public class InputOrderCommand extends AbstractCommand {
 
 					ConnectionManager.getInstance("mysql").closeConnection();
 
-						req.setAttribute("message", message);
+						session.setAttribute("message", message);
 
 						resc.setTarget("welcome");
 						return resc;
